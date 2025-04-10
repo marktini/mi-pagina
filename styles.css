@@ -262,15 +262,6 @@ input[type="checkbox"]:checked ~ label::after{
     background-color: var(--bg-color);
 }
 
-.caja {
-    display: flex;
-    flex-direction: column;
-    width: 50vw;
-    height: 30vh;
-    margin: auto;
-    background-color: #fff;
-    border-radius: 10px;
-}
 
 .contenido__principal {
     display: flex;
