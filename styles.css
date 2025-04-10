@@ -256,25 +256,6 @@ input[type="checkbox"]:checked ~ label::after{
 
 
 /* main */
-main {
-    flex: 1;
-    overflow: auto;
-    padding: 1rem;
-}
-
-.contenido__principal {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: start;
-    flex-direction: column;
-    padding: 0 1rem;
-    height: 90vh;
-}
-
-.caja {
-    background-color: #fff;
-}
 
 
 .footer {
