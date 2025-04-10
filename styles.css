@@ -222,11 +222,7 @@ input[type="checkbox"]:checked ~ label::before{
 }
 
 input[type="checkbox"]:checked ~ label::after{
-    transform: rotateY('180deg');
-    bottom: -24px;
-    left: 48px;
-    border-top-right-radius: 25px;
-    box-shadow: 4px -4px 0 4px var(--bg-color);
+    display: none;
 }
 
 .sidebar:has(input[type="checkbox"]:checked) {
@@ -269,8 +265,8 @@ main {
 .contenido__principal {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: start;
+    align-items: start;
     flex-direction: column;
     padding: 0 1rem;
     height: 90vh;
