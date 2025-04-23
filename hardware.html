@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css">
+    <title>Hardware</title>
+</head>
+<body>
+    <div class="layout">
+        <aside class="sidebar">
+            <form class="sidebar__form">
+                <input type="checkbox" id="open-menu">
+                <label for="open-menu" class="material-symbols-outlined">close</label>
+                <label for="open-menu" class="material-symbols-outlined open-button">double_arrow</label>
+            </form>
+            <picture class="sidebar__picture">
+                <source srcset="imgs/logomark.png" media="(max-width: 57.5rem)">
+                <img src="imgs/logobarmarkUSMALL.png" alt="">
+            </picture>
+            <nav class="sidebar__nav">
+                <ul>
+                    <li class="sidebar__item">
+                        <span class="material-symbols-outlined">memory</span>
+                        <a href="hardware.html">hardware</a>
+                    </li>
+                    <li class="sidebar__item">
+                        <span class="material-symbols-outlined">devices</span>
+                        <a href="#">OS</a>
+                    </li>
+                    <li class="sidebar__item">
+                        <span class="material-symbols-outlined">wysiwyg</span>
+                        <a href="#">software</a>
+                    </li>
+                    <li class="sidebar__item">
+                        <span class="material-symbols-outlined">terminal</span>
+                        <a href="#">terminal</a>
+                    </li>
+                    <li class="sidebar__item">
+                        <span class="material-symbols-outlined">database</span>
+                        <a href="#">Backup</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar__profile">
+                <ul>
+                    <li class="sidebar__item item--profile ">
+                        <img src="imgs/avatarmarcosSM.png" alt="">
+                        <span class="profile-option">PROFILE</span>
+                    </li>
+                    <li class="sidebar__item">
+                        <span class="material-symbols-outlined">Logout</span>
+                        <a href="#">LOGOUT</a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+    const checkbox = document.getElementById("open-menu");
+    const path = window.location.pathname;
+
+    const isHome = path.endsWith("index.html") || path === "/" || path === "";
+
+    // Si NO es home, cerramos el menú
+    if (!isHome) {
+    checkbox.checked = true;
+    }
+});
+</script>
+</body>
+</html>
