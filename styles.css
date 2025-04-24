@@ -416,18 +416,8 @@ h1 {
 }
 
 .portfolio {
-    background-color: var(--bg-color);
-    color: #fff;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
     container-type: inline-size;
     container-name: portfolio;
-    justify-content: space-evenly;
-    border: 2px solid black;
-    border-radius: 20px;
-
 }
 
 .portfolio__title {
@@ -435,62 +425,87 @@ h1 {
 }
 
 .portfolio__project-container{
-    display: grid;
-    grid-template-columns: 1fr;
-    max-width: 1300px;
-    margin: auto;
-    width: 100%;
-    gap: 12px;
-    padding: 12px;
-    min-height: 80vh;
-}
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en varias filas si es necesario */
+    justify-content: space-between; /* Distribuye los elementos con espacio entre ellos */
+    align-items: flex-start; /* Alinea los elementos al inicio verticalmente */
+    gap: 20px; /* Espaciado entre los elementos */
+    padding: 10px; /* Espaciado interno dentro del contenedor */
+    border-radius: 10px; /* Bordes redondeados */
+    background-color: var(--bg-color); /* Fondo blanco para el contenedor */}
 
 .portfolio__project {
-    background-image:linear-gradient(#0009,#0009), url(avatarmark.png);
-    background-position: center;
-    background-size: cover;
-    display: grid;
-    place-content: center;
-    border-radius: 8px;
+    flex: 1 1; /* Cada elemento ocupa un tercio del ancho del contenedor menos el espacio del gap */
+    max-width: 100vh; /* Asegura que no exceda el ancho */
+    background-color: var(--bg-color); /* Fondo blanco para cada proyecto */    border-radius: 8px; /* Bordes redondeados */
+    overflow: hidden; /* Oculta contenido que sobresalga */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación para hover */
 }
 
-.portfolio__project:hover{
-    opacity: 0.74;
-    outline: 2px solid #fff3ff;
+.portfolio__project:hover {
+    transform: translateY(-5px); /* Eleva el elemento al pasar el cursor */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
 }
+
+.portfolio__img-container h3{
+    color: var(--text-color);
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 0; 
+}
+
+
+.portfolio__img-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.portfolio__img{
+    position: relative;
+    right: 10px;
+    max-height: 200px;
+}
+
+.portfolio__project-date{
+    color: red;
+    font-size: 0.7rem;
+    color: var(--text-color);
+}
+
+.portfolio__project-caraclist{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+}
+
+
+.south-arrow {
+    position:relative;
+    top: 9px;
+    right: 6px;
+    color: var(--text-color);
+    transform: scale(0.40);
+
+}
+.portfolio__project p{
+    position: relative;
+    bottom: 10px;
+    text-align: center;
+    font-size: 12px;
+    outline: 1px solid top black;
+}
+
+
+
 /* - - - - - -- - - PORTFOLIO QUERYS */
 
-@container portfolio (min-width: 56.25rem){
-    .portfolio__project-container{
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(420px,1fr));
+@container portfolio (min-width: 720px) {
+    .portfolio__project {
+        flex: 1 1 calc(33.33% - 20px); /* Cada elemento ocupa un tercio del ancho del contenedor menos el espacio del gap */
+        max-width: calc(33.33% - 20px); /* Asegura que no exceda el ancho */
     }
-
-    .portfolio__project:first-child{
-        grid-column: span 2;
-    }
-    .portfolio__project:nth-child(6){
-        grid-column: span 2;
-    }
-    
 }
-
-@container portfolio (min-width: 81.25rem){
-    .portfolio__project-container{
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(290px,1fr));
-    }
-
-    .portfolio__project:first-child{
-        grid-column: span 2;
-        grid-row: span 2;
-    }
-    .portfolio__project:nth-child(6){
-        grid-column: span 4;
-    }
-    
-}
-
 .footer {
     display: flex;
     margin: 0 55px;
